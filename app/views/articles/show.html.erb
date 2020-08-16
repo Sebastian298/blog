@@ -2,3 +2,8 @@
 
 <p><strong>Tittle article:</strong><%= @article.tittle%></p>
 <p><strong>Description article:</strong> <%=@article.description%></p>
+
+<p><%= link_to 'Edit', edit_article_path(@article) %></p>
+<p><%= link_to 'Delete', article_path(), method: :delete,data:{confirm: 'Esta seguro de eliminar el articulo?'}%></p>
+<p><%= link_to 'List of articles', articles_path %></p>
+
