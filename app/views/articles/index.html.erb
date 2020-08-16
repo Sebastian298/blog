@@ -8,13 +8,13 @@
      <th>Actions</th>
     </tr>
   </thead>
-
   <tbody>
     <% @articles.each do |item| %>
     <tr>
      <td><%=item.tittle%></td>
      <td><%=item.description%></td>
-     <td>Placeholder</td>
+     <td><%= link_to 'show', article_path(item)%></td>
+     <td><%= link_to 'delete', article_path(item), method: :delete%></td>
     </tr>
   </tbody>
    <% end %>

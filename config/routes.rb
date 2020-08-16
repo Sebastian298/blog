@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'pages#welcome'
+  root 'pages#welcome' #vista de inicio, cuando se entra a la pag
   get 'about', to: 'pages#about'
-  resources :articles, only: [:show,:index] #cuando haga una peticion el cliente dependiendo de que metodo ira al controlador y buscara index o show
+  resources :articles#cuando haga una peticion el cliente dependiendo de que metodo ira al controlador y lo buscara pra ejecutarlo
 end
