@@ -1,25 +1,35 @@
- <% if @article.errors.any? %>
-     <h2>Se genero un error de update del articulo</h2>
-      <ul>
-        <% @article.errors.full_messages.each do |msg| %>
-        <li><%=msg%></li>
-       
-        <% end %>
-      </ul>
-   <% end %>
-   
-  <%= form_with(model: @article,local:true) do |f|%>
-  
-     <p>
-       <%= f.label :title%><br>
-       <%= f.text_field :tittle%>
-     </p>
+ <div class="container">
+      <% if @article.errors.any? %>
+          <h2>Se genero un error de ingreso del articulo</h2>
+           <ul>
+             <% @article.errors.full_messages.each do |msg| %>
+             <li><%=msg%></li>
+            
+             <% end %>
+           </ul>
+       <% end %>
+       <div class="row justify-content-center">
+          <div class="col-10">    
+              <%= form_with(model: @article,class: "shadow bg-info rounded",local:true) do |f|%>
+                          <div class="form-group row">
 
-     <p>
-       <%= f.label :description%><br>
-      <%= f.text_area :description%>
-     </p>
-
-     <p>
-     <%= f.submit%>
-  <% end %>
+                         <%= f.label :title, class: "col-2 col-form-label mt-4 text-light"%>
+                            <div class="col-10">
+                              <br>
+                               <%= f.text_field :tittle,class:"form-control mr-5 shador rounded",placeholder: "Title"%>
+                            </div>
+                      </div>
+                      <div class="form-group row">
+                          <%= f.label :description,class:"col-2 col-form-label text-light"%>
+                           <div class="col-10">
+                           <%= f.text_area :description,rows:8,class: "form-control mr-5 shador rounded",placeholder: "Description"%>
+                          </div>
+                      </div>
+              <div class="form-group row justify-content-center">
+                  <%= f.submit class:"btn btn-outline-dark btn-lg"%>
+              </div>          
+            <% end %>
+       </div>
+          <p><%= link_to '[Regresa a la lista de articulos]', articles_path %></p>
+   </div>
+  </div>
