@@ -12,7 +12,7 @@
                     <div class="card-body">
                      <h5 class="card-title"><%= link_to item.tittle, article_path(item), class:"text-success"%></h5>
                      <p class="card-text"><%=truncate(item.description,length:100)%></p>
-                    <%= link_to 'Show', article_path(item), class:"btn btn-outline-dark"%>
+                    <%= link_to 'View', article_path(item), class:"btn btn-outline-dark"%>
                     <%= link_to 'Edit', edit_article_path(item),class:"btn btn-outline-info"%>
                      <%= link_to 'Delete', article_path(item), method: :delete,class:"btn btn-outline-danger",data:{confirm: 'Esta seguro de eliminar el articulo?'}%>
                   </div>

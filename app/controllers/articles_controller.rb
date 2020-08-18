@@ -18,10 +18,9 @@ class ArticlesController < ApplicationController
     end
 
     def update
-        set_article
-        if @article.update(article_params)
-            flash[:notice] = "Articulo editado con exito"
-            redirect_to @article
+        if @article.update(params.require(:article).permit(:tittle,:description))
+            flash[:notice] = "Articulo actualizado con exito."
+            redirect_to @article #al hacer la insercion en la bd se redirige a una nueva pagina con la url del objeto article mostrando sus datos
         else
             render 'edit'
         end
