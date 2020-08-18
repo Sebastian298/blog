@@ -1,8 +1,9 @@
 class ArticlesController < ApplicationController
 
     before_action :set_article,only:[:show,:edit,:update,:destroy]  #ejecuta lo que hace el metodo set_article antes de realizar alguna accion el controlador
-    
+    # @articles variable de instancia que se utiliza para comunicarse con las vistas
     #metodo para que se muestre un articulo segun el id que le mande el usuario
+    
     def show
     end
 

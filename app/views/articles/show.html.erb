@@ -1,9 +1,21 @@
-<h1>Showing article details</h1>
 
-<p><strong>Tittle article:</strong><%= @article.tittle%></p>
-<p><strong>Description article:</strong> <%=@article.description%></p>
-
-<p><%= link_to 'Edit', edit_article_path(@article) %></p>
-<p><%= link_to 'Delete', article_path(), method: :delete,data:{confirm: 'Esta seguro de eliminar el articulo?'}%></p>
-<p><%= link_to 'List of articles', articles_path %></p>
-
+      <h2 class="text-center mt-5">Showing article details from: <%=@article.tittle%></h2>
+      <div class="container">
+          <div class="row">
+             <div class="col-10 mt-4">
+                 <div class="card text-center w-auto mr-5 ml-5 shadow mb-5 bg-white rounded">
+                  <div class="card-header font-italic">
+                    by Sebastian Tenorio
+                    </div>
+                    <div class="card-body">
+                     <div class="card-text text-left"><%= simple_format(@article.description)%></div>
+                    <%= link_to 'Edit', edit_article_path(@article),class:"btn btn-outline-info"%>
+                     <%= link_to 'Delete', article_path(@article), method: :delete,class:"btn btn-outline-danger",data:{confirm: 'Esta seguro de eliminar el articulo?'}%>
+                  </div>
+                  <div class="card-footer text-muted">
+                   <small>Created <%= time_ago_in_words(@article.created_at)%> ago</small>
+                  </div>
+               </div>     
+            </div>
+         </div>
+     </div>
