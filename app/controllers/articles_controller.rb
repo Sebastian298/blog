@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
 
     def create
         @article = Article.new(article_params)
-
+        @article.user = User.first
         if @article.save
             flash[:notice] = "Articulo agregado con exito."
             redirect_to @article #al hacer la insercion en la bd se redirige a una nueva pagina con la url del objeto article mostrando sus datos

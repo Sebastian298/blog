@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_many :articles
     #Validaciones para los campos de la tabla usuario, donde se valida que no se deje en blanco el campo
     #que valide repetidos tomando en cuenta mayuscula y minuscula y la longitud de caracteres
     validates :username, presence: true,
