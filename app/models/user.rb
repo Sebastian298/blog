@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    before_save { self.email = email.downcase } #antes de hacer un guardado a la bd el metodo downcase transforma toda la cadena a minusculas y despues lo guarda con el metodo save
     has_many :articles
     #Validaciones para los campos de la tabla usuario, donde se valida que no se deje en blanco el campo
     #que valide repetidos tomando en cuenta mayuscula y minuscula y la longitud de caracteres
