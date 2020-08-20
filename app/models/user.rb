@@ -11,4 +11,6 @@ class User < ApplicationRecord
                                        uniqueness: { case_sensitive: false },  #validacion para que tome en cuenta mayusculas y minusculas en el tema de los duplicados
                                        length: {maximum:110},
                                        format: { with: VALID_EMAIL_REGEX }
+
+    has_secure_password #al agregar la gema bcrypt se a;ade en el modelo un campo con el password
 end
